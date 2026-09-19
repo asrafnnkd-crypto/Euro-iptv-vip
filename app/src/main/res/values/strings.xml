@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Euro IPTV</string>
+    <string name="search_hint">Search...</string>
+    <string name="live_tvs">Live TV\'s</string>
+    <string name="movies">Movies</string>
+    <string name="radios">Radios</string>
+    <string name="channels_count">+5000 Channels</string>
+    <string name="series_count">+1200 Series</string>
+    <string name="stations_count">+500 Stations</string>
+    <string name="last_update">Last Update : 2 day ago</string>
+    <string name="badge_new">New</string>
+    <string name="playing_radio">Playing... Radio Azadi-Mahsa Am...</string>
+    <string name="splash_loading">Checking network connection...</string>
+    <string name="splash_connecting">Initializing EURO IPTV engine...</string>
+    <string name="activation_title">Device Activation</string>
+    <string name="activation_subtitle">Please enter your subscription activation code to unlock live streams and VOD library.</string>
+    <string name="activation_code_hint">XXXX-XXXX-XXXX-XXXX</string>
+    <string name="activation_submit">Activate Now</string>
+    <string name="whatsapp_support_label">Need an activation code? Contact us via WhatsApp</string>
+    <string name="whatsapp_chat_action">Chat on WhatsApp</string>
+    <string name="whatsapp_number">+212643316085</string>
+    <string name="admin_panel_title">Remote Admin Configuration</string>
+    <string name="player_live">Live</string>
+    <string name="player_category_default">Animals and Nature</string>
+    <string name="player_channel_default">Nat Geo Wild HD</string>
+</resources>

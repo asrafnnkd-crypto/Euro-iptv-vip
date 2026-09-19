@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Euro IPTV</string>
+    <string name="search_hint">بحث...</string>
+    <string name="live_tvs">بث مباشر</string>
+    <string name="movies">أفلام ومسلسلات</string>
+    <string name="radios">إذاعات راديو</string>
+    <string name="channels_count">+5000 قناة</string>
+    <string name="series_count">+1200 مسلسل</string>
+    <string name="stations_count">+500 محطة</string>
+    <string name="last_update">آخر تحديث : منذ يومين</string>
+    <string name="badge_new">جديد</string>
+    <string name="playing_radio">تشغيل... راديو أزادي مباشر</string>
+    <string name="splash_loading">جاري فحص الاتصال بالإنترنت...</string>
+    <string name="splash_connecting">جاري تهيئة محرك EURO IPTV...</string>
+    <string name="activation_title">تفعيل الجهاز</string>
+    <string name="activation_subtitle">يرجى إدخال رمز تفعيل الاشتراك لفتح القنوات المباشرة ومكتبة الفيديو.</string>
+    <string name="activation_code_hint">XXXX-XXXX-XXXX-XXXX</string>
+    <string name="activation_submit">تفعيل الآن</string>
+    <string name="whatsapp_support_label">هل تحتاج إلى رمز التفعيل؟ تواصل معنا عبر واتساب</string>
+    <string name="whatsapp_chat_action">مراسلة عبر واتساب</string>
+    <string name="whatsapp_number">+212643316085</string>
+    <string name="admin_panel_title">لوحة التحكم عن بعد</string>
+    <string name="player_live">مباشر</string>
+    <string name="player_category_default">الحيوانات والطبيعة</string>
+    <string name="player_channel_default">ناشيونال جيوغرافيك وايلد HD</string>
+</resources>

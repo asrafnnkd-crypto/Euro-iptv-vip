@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Screen & Padding Dimensions -->
+    <dimen name="iptv_screen_padding_horizontal">48dp</dimen>
+    <dimen name="iptv_screen_padding_vertical">36dp</dimen>
+
+    <!-- Header Dimensions -->
+    <dimen name="iptv_header_height">56dp</dimen>
+    <dimen name="iptv_search_width">320dp</dimen>
+    <dimen name="iptv_search_height">44dp</dimen>
+    <dimen name="iptv_icon_button_size">44dp</dimen>
+    <dimen name="iptv_profile_size">46dp</dimen>
+
+    <!-- Main Cards Dimensions -->
+    <dimen name="iptv_card_width">230dp</dimen>
+    <dimen name="iptv_card_height">350dp</dimen>
+    <dimen name="iptv_card_corner_radius">18dp</dimen>
+    <dimen name="iptv_card_elevation_normal">4dp</dimen>
+    <dimen name="iptv_card_elevation_focused">16dp</dimen>
+    <dimen name="iptv_card_spacing">28dp</dimen>
+    <dimen name="iptv_card_icon_size">68dp</dimen>
+
+    <!-- Focused Indicator -->
+    <dimen name="iptv_focus_underline_height">3.5dp</dimen>
+    <dimen name="iptv_focus_underline_width">56dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="iptv_logo_text_size">22sp</dimen>
+    <dimen name="iptv_card_title_size">22sp</dimen>
+    <dimen name="iptv_card_subtitle_size">13sp</dimen>
+    <dimen name="iptv_badge_text_size">11sp</dimen>
+    <dimen name="iptv_clock_text_size">44sp</dimen>
+    <dimen name="iptv_date_text_size">15sp</dimen>
+    <dimen name="iptv_weather_text_size">18sp</dimen>
+</resources>

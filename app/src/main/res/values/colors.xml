@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="iptv_bg">#1E2229</color>
+    <color name="iptv_bg_dark">#14171E</color>
+    <color name="iptv_card_bg">#252B36</color>
+    <color name="iptv_card_focused">#2C3341</color>
+    <color name="iptv_card_border">#384252</color>
+    <color name="iptv_header_search_bg">#272D39</color>
+    <color name="iptv_header_icon_bg">#272D39</color>
+    <color name="iptv_accent_orange">#FF7315</color>
+    <color name="iptv_profile_red">#E53935</color>
+    <color name="iptv_text_primary">#FFFFFF</color>
+    <color name="iptv_text_secondary">#9AA4B2</color>
+    <color name="iptv_text_muted">#687282</color>
+    <color name="iptv_focus_underline">#FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

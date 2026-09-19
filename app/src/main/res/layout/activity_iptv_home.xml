@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  EURO IPTV - Home Dashboard Layout (Standard Android XML Reference)
+  Pure Android SDK layout compatible with any Android version without external libraries.
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iptv_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/iptv_bg"
+    android:paddingStart="@dimen/iptv_screen_padding_horizontal"
+    android:paddingEnd="@dimen/iptv_screen_padding_horizontal"
+    android:paddingTop="@dimen/iptv_screen_padding_vertical"
+    android:paddingBottom="@dimen/iptv_screen_padding_vertical">
+
+    <!-- ======================================================== -->
+    <!-- TOP NAVIGATION BAR (HEADER)                              -->
+    <!-- ======================================================== -->
+    <RelativeLayout
+        android:id="@+id/layout_header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <!-- Left: Logo & Voice Search -->
+        <LinearLayout
+            android:id="@+id/layout_header_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- "EURO" Bold -->
+            <TextView
+                android:id="@+id/tv_logo_euro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.06"
+                android:text="EURO"
+                android:textColor="@color/iptv_text_primary"
+                android:textSize="@dimen/iptv_logo_text_size"
+                android:textStyle="bold" />
+
+            <!-- "IPTV" Light -->
+            <TextView
+                android:id="@+id/tv_logo_iptv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="sans-serif-light"
+                android:letterSpacing="0.04"
+                android:text="IPTV"
+                android:textColor="@color/iptv_text_secondary"
+                android:textSize="@dimen/iptv_logo_text_size" />
+
+            <!-- Vertical Divider -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/iptv_card_border" />
+
+            <!-- Voice Mic Button -->
+            <ImageView
+                android:id="@+id/btn_voice_mic"
+                android:layout_width="@dimen/iptv_icon_button_size"
+                android:layout_height="@dimen/iptv_icon_button_size"
+                android:background="@color/iptv_header_icon_bg"
+                android:contentDescription="Voice Search"
+                android:padding="12dp"
+                android:src="@drawable/ic_sync_update" />
+        </LinearLayout>
+
+        <!-- Center: Search Pill Box -->
+        <LinearLayout
+            android:id="@+id/layout_search_box"
+            android:layout_width="@dimen/iptv_search_width"
+            android:layout_height="@dimen/iptv_search_height"
+            android:layout_centerInParent="true"
+            android:background="@color/iptv_header_search_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:contentDescription="Search Icon"
+                android:src="@drawable/ic_sync_update" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/search_hint"
+                android:textColor="@color/iptv_text_secondary"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Right: Settings & User Profile -->
+        <LinearLayout
+            android:id="@+id/layout_header_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/btn_settings"
+                android:layout_width="@dimen/iptv_icon_button_size"
+                android:layout_height="@dimen/iptv_icon_button_size"
+                android:layout_marginEnd="14dp"
+                android:background="@color/iptv_header_icon_bg"
+                android:contentDescription="Settings"
+                android:padding="11dp"
+                android:src="@drawable/ic_sync_update" />
+
+            <ImageView
+                android:id="@+id/iv_user_avatar"
+                android:layout_width="@dimen/iptv_profile_size"
+                android:layout_height="@dimen/iptv_profile_size"
+                android:background="@color/iptv_profile_red"
+                android:contentDescription="User Avatar"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_user_avatar" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- ======================================================== -->
+    <!-- MAIN CONTENT AREA (3 CARDS HORIZONTAL GRID)              -->
+    <!-- ======================================================== -->
+    <LinearLayout
+        android:id="@+id/layout_cards_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal">
+
+        <!-- Card 1: LIVE TV'S (FOCUSED / SELECTED) -->
+        <RelativeLayout
+            android:id="@+id/card_live_tvs"
+            android:layout_width="@dimen/iptv_card_width"
+            android:layout_height="@dimen/iptv_card_height"
+            android:background="@color/iptv_card_focused"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp">
+
+            <!-- Top Tag: Last Update -->
+            <LinearLayout
+                android:id="@+id/tag_last_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:contentDescription="Update Icon"
+                    android:src="@drawable/ic_sync_update" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/last_update"
+                    android:textColor="@color/iptv_text_secondary"
+                    android:textSize="@dimen/iptv_badge_text_size" />
+            </LinearLayout>
+
+            <!-- Center Icon: TV Display -->
+            <ImageView
+                android:id="@+id/icon_live_tv"
+                android:layout_width="@dimen/iptv_card_icon_size"
+                android:layout_height="@dimen/iptv_card_icon_size"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/live_tvs"
+                android:src="@drawable/ic_iptv_live_tv" />
+
+            <!-- Title, Subtitle, and White Underline -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title_live_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/live_tvs"
+                    android:textColor="@color/iptv_text_primary"
+                    android:textSize="@dimen/iptv_card_title_size" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle_live_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/channels_count"
+                    android:textColor="@color/iptv_text_secondary"
+                    android:textSize="@dimen/iptv_card_subtitle_size" />
+
+                <!-- White Underline for Focused Card -->
+                <View
+                    android:id="@+id/view_focus_underline"
+                    android:layout_width="@dimen/iptv_focus_underline_width"
+                    android:layout_height="@dimen/iptv_focus_underline_height"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/iptv_focus_underline" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Card 2: MOVIES -->
+        <RelativeLayout
+            android:id="@+id/card_movies"
+            android:layout_width="@dimen/iptv_card_width"
+            android:layout_height="@dimen/iptv_card_height"
+            android:layout_marginStart="@dimen/iptv_card_spacing"
+            android:background="@color/iptv_card_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp">
+
+            <!-- "New" Badge in Top Right -->
+            <TextView
+                android:id="@+id/badge_new_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/iptv_accent_orange"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="@string/badge_new"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <!-- Center Icon: Movie Slate -->
+            <ImageView
+                android:id="@+id/icon_movies"
+                android:layout_width="@dimen/iptv_card_icon_size"
+                android:layout_height="@dimen/iptv_card_icon_size"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/movies"
+                android:src="@drawable/ic_iptv_movies" />
+
+            <!-- Title & Subtitle -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/movies"
+                    android:textColor="@color/iptv_text_primary"
+                    android:textSize="@dimen/iptv_card_title_size" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/series_count"
+                    android:textColor="@color/iptv_text_secondary"
+                    android:textSize="@dimen/iptv_card_subtitle_size" />
+
+                <!-- Bottom spacer to balance focused card underline -->
+                <View
+                    android:layout_width="@dimen/iptv_focus_underline_width"
+                    android:layout_height="@dimen/iptv_focus_underline_height"
+                    android:layout_marginTop="14dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Card 3: RADIOS -->
+        <RelativeLayout
+            android:id="@+id/card_radios"
+            android:layout_width="@dimen/iptv_card_width"
+            android:layout_height="@dimen/iptv_card_height"
+            android:layout_marginStart="@dimen/iptv_card_spacing"
+            android:background="@color/iptv_card_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp">
+
+            <!-- Faint Artist Photo Silhouette Background -->
+            <ImageView
+                android:id="@+id/iv_radio_artist_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.22"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_radio_artist" />
+
+            <!-- Playing Status Pill at Top -->
+            <TextView
+                android:id="@+id/badge_playing_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/playing_radio"
+                android:textColor="@color/iptv_text_secondary"
+                android:textSize="10sp" />
+
+            <!-- Center Icon: Vintage Radio -->
+            <ImageView
+                android:id="@+id/icon_radios"
+                android:layout_width="@dimen/iptv_card_icon_size"
+                android:layout_height="@dimen/iptv_card_icon_size"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/radios"
+                android:src="@drawable/ic_iptv_radios" />
+
+            <!-- Title & Subtitle -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_title_radios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/radios"
+                    android:textColor="@color/iptv_text_primary"
+                    android:textSize="@dimen/iptv_card_title_size" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle_radios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/stations_count"
+                    android:textColor="@color/iptv_text_secondary"
+                    android:textSize="@dimen/iptv_card_subtitle_size" />
+
+                <!-- Bottom spacer -->
+                <View
+                    android:layout_width="@dimen/iptv_focus_underline_width"
+                    android:layout_height="@dimen/iptv_focus_underline_height"
+                    android:layout_marginTop="14dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- ======================================================== -->
+    <!-- BOTTOM-RIGHT WIDGET AREA (TIME, DATE, WEATHER)           -->
+    <!-- ======================================================== -->
+    <LinearLayout
+        android:id="@+id/layout_bottom_widget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <!-- Weather (Cloud + 24°) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="Weather Icon"
+                android:src="@drawable/ic_iptv_weather" />
+
+            <TextView
+                android:id="@+id/tv_weather_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="24°"
+                android:textColor="@color/iptv_text_primary"
+                android:textSize="@dimen/iptv_weather_text_size" />
+        </LinearLayout>
+
+        <!-- Time (e.g. 12:51) -->
+        <TextView
+            android:id="@+id/tv_current_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="12:51"
+            android:textColor="@color/iptv_text_primary"
+            android:textSize="@dimen/iptv_clock_text_size"
+            android:textStyle="bold" />
+
+        <!-- Date (e.g. Wednesday, Jan 2) -->
+        <TextView
+            android:id="@+id/tv_current_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Wednesday, Jan 2"
+            android:textColor="@color/iptv_text_secondary"
+            android:textSize="@dimen/iptv_date_text_size" />
+    </LinearLayout>
+
+</RelativeLayout>
